@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mokepon &#9211; Game</title>
+    <style>
+        h2 span {
+            font-size: 4rem;
+            display: flex;
+        }
+
+        label{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Mokepón 
+        <span>🐲 🐳 🐛</span>
+    </h2>
+
+    <section id="select-pet">
+        <h4>Elige a tu mascota:</h4>
+
+        <label for="hipodoge">Hipodoge -> Agua </label>
+        <input type="radio" name="mascotas" id="hipodoge"/>
+
+        <label for="capipepo">Capipepo -> Tierra</label>
+        <input type="radio" name="mascotas" id="capipepo"/>
+
+        <label for="ratigueya">Ratigueya -> Fuego</label>
+        <input type="radio" name="mascotas" id="ratigueya"/>
+
+        <label for="langostelvis">Langostelvis -> Agua fuego </label>
+        <input type="radio" name="mascotas" id="langostelvis"/>
+
+        <label for="tucapalma">Tucapalma -> Agua y Tierra</label>
+        <input type="radio" name="mascotas" id="tucapalma"/>
+
+        <label for="pymos">Pymos -> Tierra y fuego</label>
+        <input type="radio" name="mascotas" id="pymos">
+
+        <button id="btn-select-pet">Seleccionar</button>
+    </section>
+
+    <section id="select-atack">
+        <h4>Elige a tu ataque:</h4>
+
+        <p>Tu mascota tiene <span>3</span> vidas</p>
+        <p>Las moscotas enemigas tienen <span>3</span> vidas</p>
+
+        <div>
+            <button id="btn-fire">Fuego 💥</button>
+        </div>
+    
+        <div>
+            <button id="btn-water">Agua 💦</button>
+        </div>
+    
+        <div>
+            <button id="btn-terra">Tierra 🌱 </button>
+        </div>
+    </section>
+
+    <section id="mensaje">
+        <p>Tu mascota atacó con Fuego, y tu contrincante atacó con Tierra</p>
+    </section>
+
+    <section id="reiniciar">
+        <button id="btn-reload">Reiniciar</button>
+    </section>
+
+    <script src="./JS/script.js"></script>
+
+</body>
+</html>

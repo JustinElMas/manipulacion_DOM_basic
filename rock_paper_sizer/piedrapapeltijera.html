@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game paper, cut or hit</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --color-primary: #ffe4c4;
+            --color-second: #867200;
+            --color-third: #b3aa7a5e;
+            --font-all: sans-serif;
+            --sm: 14px;
+            --md: 16px;
+            --lg: 18px;
+        }    
+    
+        select{
+            background-color: var(--color-primary);
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 1.2rem;
+            border-radius: 20px;
+            width: 10rem;
+            height: 2.5rem;
+            text-align: center;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .login {
+            width: 100%;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+
+        .form-container {
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            width: 300px;
+        }
+
+        .logo {
+            filter: drop-shadow(1);
+            width: 6rem;
+            margin: 1rem 0;
+            justify-self: center;
+            animation: emoji 1s infinite alternate
+        }
+
+        .title {
+            font-family: var(--font-all);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .subtitle {
+            color: var(--color-second);
+            font-size: var(--md);
+            font-weight: 500;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .label {
+            font-size: var(--sm);
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .password-input {
+            background-color: var(--color-third);
+            border: none;
+            border-radius: 12px;
+            height: 30px;
+            padding: 8px;
+            margin-bottom: 15px;
+        }
+
+        .primary-btn {
+            background-color: var(--color-second);
+            color: aliceblue;
+            font-size: var(--md);
+            margin: 20px 0;
+            font-weight: 900;
+            border-radius: 20px;
+            border: none;
+            height: 35px;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        ol li {
+            margin: 20px 0;
+        }
+
+        @keyframes emoji {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.1);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .logo {
+                box-shadow: 1px 1px 7px #000;
+                border-radius: 25px;
+                margin-bottom: 2rem;
+            } 
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="login">
+        <div class="form-container">
+            <img src="./emoji-feliz.png" alt="logo" class="logo">
+
+            <h2 class="title">Juguemos piedra, papel o tijera</h2>
+
+            <p class="subtitle">Escribe un número:
+                <ol>
+                    <li> Tijera </li>
+                    <li> Piedra</li>
+                    <li> Papel</li>
+                </ol>
+            </p>
+
+            <form action="#" class="form">
+                <label for="password" class="label">Player:</label>
+                <input type="number" name="password" id="password" placeholder="Escribe un número" class="password-input">
+
+                <input type="button" value="Confirm " class="primary-btn">
+
+            </form>
+            
+        </div>
+    </div>
+
+
+    <div class="container-game">
+        <p class="userChoose"></p>
+        <p class="pcChoose"></p>
+        <p class="result"></p>
+        <input type="button" value="Volver a jugar" class="btn-start">
+    </div>
+
+    <script>
+        let player = 0;
+        let pc = randomNum(1, 3);
+
+        const $result = document.querySelector('.result');
+        const $userChoose = document.querySelector('.userChoose');
+        const $pcChoose = document.querySelector('.pcChoose');
+        const $body = document.querySelector('body').style.backgroundColor = 'papayawhip'
+
+        const $numberUser = document.querySelector('.password-input').value;
+
+        
+        console.log($numberUser);
+
+        // let rangoGameRamdon = {
+        //     min: "1",
+        //     max: "3"
+        // };
+
+        // let pc = Math.floor((Math.random() * (rangoGameRamdon.max - rangoGameRamdon.min)) + 1);
+
+        // refactor_of_code 
+
+        function randomNum(min, max) {
+            return Math.floor((Math.random() * (max - min + 1)) + min);
+        }
+
+
+        // by the players 
+
+        function choose (played) {
+            let resultado = "";
+            if (played == 1) {
+                resultado = styleUser ('Elegiste tijera🔪');
+            } else if  (played  == 2) {
+                resultado = styleUser ('Elegiste piedra🔘');
+            } else if (played == 3){
+                resultado = styleUser('Elegiste papel📨');
+            } else {
+                resultado = document.write('</br>' + "opción no válida, game over");
+            }
+
+            return resultado;
+        }
+
+        function styleUser (x){
+            $userChoose.style.fontSize = '30px';
+            $userChoose.style.fontFamily = 'monospace';
+            $userChoose.style.backgroundColor = '#fe9';
+            $userChoose.style.padding = '8px 0'
+            $userChoose.style.border = '0.2rem dotted #000'
+            $userChoose.style.borderRadius = '20px';
+            $userChoose.style.width = '50%';
+            $userChoose.style.textAlign = 'center';
+            $userChoose.textContent = x;
+            return x;
+            }
+
+        function stylePC (y) {
+            $pcChoose.style.fontSize = '30px';
+            $pcChoose.style.fontFamily = 'monospace';
+            $pcChoose.style.backgroundColor = '#fe9';
+            $pcChoose.style.padding = '8px 0'
+            $pcChoose.style.border = '0.2rem dotted #000'
+            $pcChoose.style.borderRadius = '20px';
+            $pcChoose.style.width = '50%';
+            $pcChoose.style.textAlign = 'center';
+            $pcChoose.textContent = y;
+            return y;
+        }
+
+        // player = prompt("Elige: \n 1. Tijera \n 2. Piedra \n 3. Papel");
+
+        // options for player        
+
+        // alert("PC elige: " + choose(pc));
+        // alert("PC elige: " );
+       
+        // options for pc
+
+        if (pc == 1) {
+            stylePC ('PC elige tijera🔪');
+        } else if  (pc == 2) {
+            stylePC ('PC elige piedra🔘');
+        } else if (pc == 3){
+            stylePC ('PC elige papel📨');
+        } 
+
+        let gameStartNew = document.querySelector('.btn-start');
+        gameStartNew.addEventListener('click', refresh);
+
+        function refresh () {
+            return location.reload();
+        }
+
+        let $buttonConfirm = document.querySelector('.primary-btn');
+        $buttonConfirm.addEventListener('click', play);
+
+        function play() {
+            const $numberUser = document.querySelector('.password-input').value;
+                    // fight 
+
+        if (pc == $numberUser) {
+            $result.textContent = "Empate";
+            $result.style.backgroundColor = 'yellow';
+            $result.style.borderRadius = '20px';
+            $result.style.padding = '3px 15px';
+            $result.style.color = 'black';
+            $result.style.fontWeight = '900';
+            $result.style.width = '50%';
+            $result.style.textAlign = 'center';
+        } else if ($numberUser == 1 && pc == 3) {
+            $result.textContent = 'Ganaste';
+            $result.style.backgroundColor = 'green';
+            $result.style.borderRadius = '20px';
+            $result.style.padding = '3px 15px';
+            $result.style.color = 'white';
+            $result.style.fontWeight = '900';
+            $result.style.width = '50%';
+            $result.style.textAlign = 'center';
+        } else if ($numberUser == 3 && pc ==2){
+            $result.textContent = 'Ganaste';
+            $result.style.backgroundColor = 'green';
+            $result.style.borderRadius = '20px';
+            $result.style.padding = '3px 15px';
+            $result.style.color = 'white';
+            $result.style.fontWeight = '900';
+            $result.style.width = '50%';
+            $result.style.textAlign = 'center';
+        } else if ($numberUser == 2 && pc == 1) {
+            $result.textContent = 'Ganaste';
+            $result.style.backgroundColor = 'green';
+            $result.style.borderRadius = '20px';
+            $result.style.padding = '3px 15px';
+            $result.style.color = 'white';
+            $result.style.fontWeight = '900';
+            $result.style.width = '50%';
+            $result.style.textAlign = 'center';
+        } else {
+            $result.textContent = 'Perdiste';
+            $result.style.backgroundColor = 'red';
+            $result.style.borderRadius = '20px';
+            $result.style.padding = '3px 15px';
+            $result.style.color = 'white';
+            $result.style.fontWeight = '900';
+            $result.style.width = '50%';
+            $result.style.textAlign = 'center';
+        }
+            choose($numberUser);
+            console.log($numberUser);
+        }
+
+    </script>
+
+</body>
+</html>

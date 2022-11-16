@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscribete a la MC-8</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        a{
+            text-decoration: none;
+            color: #020200;
+        }
+
+        :root {
+            --text-body: monospace;
+        }
+
+        .return nav a {
+            margin-top: 1rem;
+            background-color: aliceblue;
+            padding: 0.6rem 0.2rem;
+            line-height: 2rem;
+            border-radius: 0 0 15px 15px;
+        }
+
+        body {
+            background-color: rgb(167, 189, 255);
+            font-family: var(--text-body);
+        }
+
+        .formulario {
+            width: 100%;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+            margin-top: 2rem;
+        }
+
+        .form small {
+            margin-top: 2rem;
+        }
+        
+        input {
+            margin-top: 20px;
+            width: 100vh;
+            border-radius: 17px;
+            border: none;
+            height: 2.5vw;
+            padding: 8px;
+        }
+
+        .text-call-help {
+            margin: 12px;
+            color: #ac5858;
+            font-weight: bolder;
+            border-bottom: 0.2rem solid #a36565;
+            border-radius: 15px;
+        }
+
+        .button {
+            color: #fff;
+            background-color: rgb(0, 87, 168);
+            border: 0.3rem solid #020200;
+            width: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .form-container {
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            width: 50%;
+        }
+
+        .logo {
+            width: 15rem;
+            margin: 2rem 1rem;
+            justify-self: center;
+            border-radius: 20px;
+        }
+
+        .img-h {
+            width: 50rem;
+            height: 30rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 700px) {
+            body {
+                text-align: center;
+            }
+
+            input {
+                width: 80vw;
+                height: 5vh;
+                margin-bottom: 1rem;
+            }
+
+            .form-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .button {
+                font-size: 0.8rem;
+                line-height: 0.5rem;    
+            }
+        }
+    
+
+    </style>
+</head>
+<body>
+    
+    <div class="return">
+        <nav>
+            <a href="">Volver al HOME</a>
+        </nav>
+    </div>
+
+    <div class="formulario">
+
+        <h2 class="title-form">Completa los campos y da en el botón enviar cuando hayas terminado</h2>
+
+        <p class="text-call-help">Si tienes algún problemas puedes llamar a:</p>
+        <a href="tel:3152394484">315 239 4484 llamar ahora</a>
+
+        <div class="form-container">
+
+            <img src="./istockphoto-1333414540-170667a.jpg" alt="" class="logo">
+
+            <form action="https://formsubmit.co/justin7bjjr2014@gmail.com" class="form" method="post">
+                <label for="nameUser">Escribe tu nombre: </label>
+                <input type="text" placeholder="Nombre" name="nameUser" autocomplete="off" required>
+    
+                <label for="text-creative">Escribe tu creatividad: </label>
+                <input type="text" placeholder="Cantar, danzar, coreografía, teatro, comedia, poesía, entro otras..." name="text-creative" autocomplete="off" required>
+    
+                <label for="number-phone">Número de celular: </label>
+                <input type="number" name="number-phone" placeholder="Número de celular" autocomplete="off" required>
+
+                <small>🚨 Recuerda que puedes llevar tu sombrero creativo y participar en el concurso de sombrero, y ganar el premio.</small>
+    
+                <input type="submit" value="Enviar formulario" class="button">
+    
+    
+            </form>
+        </div>
+
+        <script src="./main.js"></script>
+
+    </div>
+
+</body>
+</html>

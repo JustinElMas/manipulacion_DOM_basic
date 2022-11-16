@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practicando con JavaScript</title>
+</head>
+<body>
+
+    <!-- a una const no le puedes cambiar su valor, ya quedó contante una vez la inicialices con un valor "inicial" -->
+    <main class="container">
+        <form action="#">
+            <label for="$nameUser">Ingresa tu nombre: </label>
+            <input type="text" name="nameUser" id="$nameUser" class="name1"> </br>
+
+            <label for="$nameUser">Ingresa tu apellido: </label>
+            <input type="text" name="nameUser" id="$nameUser" class="name2">
+
+            <button class="btnCreator" type="button">Crear nuevo elemento</button>
+
+        </form>
+    </main>
+
+    <div class="lop"></div>
+
+    <script>
+
+        document.querySelector('.btnCreator').addEventListener ('click', e => {
+            const $newElement = document.createElement('div');
+            const $userNumber1 = document.querySelector('.name1').value;
+            const $userNumber2 = document.querySelector('.name2').value;
+            // $newElement.classList.add("div");
+            $newElement.textContent = $userNumber1 + " " + $userNumber2;
+            // $newElement.textContent = `${$userNumber1} ${$userNumber2} `;
+            document.querySelector(".lop").appendChild($newElement);
+        });
+    </script>
+
+    <script src="./variables.js"></script>
+
+</body>
+</html>

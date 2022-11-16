@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripciones MC-8</title>
+    <style>
+        :root {
+            --color-primary: #ffe4c4;
+            --color-second: #867200;
+            --color-third: #b3aa7a5e;
+            --font-all: sans-serif;
+            --sm: 14px;
+            --md: 16px;
+            --lg: 18px;
+        }    
+    
+        select{
+            background-color: var(--color-primary);
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 1.2rem;
+            border-radius: 20px;
+            width: 10rem;
+            height: 2.5rem;
+            text-align: center;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* :picture-in-picture what is the mean of these pseudoclass*/
+        input {
+            outline: none;
+        }
+
+        .login {
+            width: 100%;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+
+        .form-container {
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            width: 300px;
+        }
+
+        .logo {
+            filter: drop-shadow(1);
+            width: 6rem;
+            margin: 1rem 0;
+            justify-self: center;
+            animation: emoji 1s infinite alternate
+        }
+
+        .title {
+            font-family: var(--font-all);
+            margin-bottom: 22px;
+            text-align: start;
+        }
+
+        .form, .form div{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .label {
+            font-size: var(--sm);
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .value {
+            color: #444444;
+            font-size: var(--md);
+            margin: 8px 0 32px 0;
+        }
+
+        .secondary-btn {
+            background-color: var(--color-primary);
+            color: black;
+            font-size: var(--md);
+            margin: 20px 0;
+            font-weight: 900;
+            border-radius: 20px;
+            border: 10x solid #000;
+            height: 35px;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        @keyframes emoji {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.1);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .form-container {
+                height: 100%;
+            }
+            .form{
+                height: 100%;
+                justify-content: space-between;
+            }
+            
+            .secondary-btn {
+                width: 300px;
+                position: absolute;
+                bottom: 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- maquetación del proyecto -->
+
+    <div class="login">
+        <div class="form-container">
+            <h2 class="title">My account</h2>
+
+            <form action="#" class="form">
+
+                <div>
+                    <label for="name" class="label">Name</label>
+                    <p class="value">Karla Heredia</p>
+    
+                    <label for="email" class="label">E-mail</label>
+                    <p class="value">justin7b@gmail.com</p>
+    
+                    <label for="password" class="label">Password</label>
+                    <p class="value">Contraseña</p>
+                </div>
+
+                <input type="submit" value="Edit" class="secondary-btn">
+            </form>
+            
+            
+        </div>
+    </div>
+    
+</body>
+</html>

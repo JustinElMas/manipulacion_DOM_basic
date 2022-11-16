@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    border: 2.2rem groove #c56d6d;
+    border-radius: 20px;
+    width: 95vw;
+    height: 100vh;
+    background-color: bisque;
+    margin: auto;
+}
+
+/* Display grid  */
+
+/* .contenedor {
+    border: 5px solid #e1bee7;
+    background-color: #b8860b;
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px;
+} */
+
+/* .contenedor {
+    border: 5px solid #e1bee7;
+    background-color: #b8860b;
+    display: grid;
+    grid-template-rows: 100px 100px;
+    grid-auto-columns: 100px;
+    grid-auto-flow: column;
+}
+
+.contenedor:hover {
+    row-gap: 10px;
+    column-gap: 8px;
+    transition: all 1s ease;
+} */
+
+.contenedor {
+    border: 5px solid #e1bee7;
+    background-color: #b8860b;
+    display: grid;
+    grid-template-rows: 100px 100px 100px;
+    grid-auto-flow: column;
+    grid-auto-columns: 100px;
+    gap: 20px;
+}
+
+.contenedor .item {
+    border: 2px solid #0404f2;
+    font-size: larger;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: monospace;
+}
+
+/* PROPIEDADES DEL CONTENEDOR: 
+    1. Display grid 
+    Al aplicarlo al contenedor, le dice como se va a comportar, es para crear "grillas". 
+
+    ¿Cómo hacer para editar el  número de columnas y el número de filas  de la grid?
+
+    Usando las propiedades de Grid template column y grid template rows 
+
+    Se pueden dar valores de medidas como los pixeles. 
+
+    También: 
+
+    Grid-auto-rows y grid-auto-columns
+
+    Se define el tamaño de columna que se vayan creando. 
+
+    Grid-auto-flow 
+
+    Para modificar como se crean los espacios
+
+    Grid-Gap 
+
+    Para crear espacios, o brechas
+
+    ** RETO #0 **
+
+    -Crear un displaye grid que tenga 3 filas y dos columnas un gap de 20px 
+    -Y que los números coincidan 
+
+    2. Grid-template 
+    3. Gaps
+    4. Grid-Auto
+*/
+
