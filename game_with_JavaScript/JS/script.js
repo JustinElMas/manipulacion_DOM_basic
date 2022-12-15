@@ -45,3 +45,6 @@ function documentLoadComplete () {
 window.addEventListener('load', documentLoadComplete);
 
 //**PREGUNTAS  ¿QUÉ SIGNIFICA? script.js:5 [Violation] 'click' handler took 804ms */
+
+//para estudiar react and node 
+//https://www.npmjs.com/package/require-stack
